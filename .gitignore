@@ -1,0 +1,5 @@
+node_modules/
+.test-profile/
+screenshots/
+*.log
+.DS_Store

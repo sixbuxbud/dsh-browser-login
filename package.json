@@ -1,0 +1,43 @@
+{
+  "name": "dsh-browser-login",
+  "version": "0.1.1",
+  "description": "让 DeepSeek Harness 驱动你自己的 Chrome/Edge：持久化登录态（B 站 / YouTube / X / Facebook 等），登录与验证码交给人工完成后自动续跑，支持代理。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "scripts",
+    "test",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "browser",
+    "login",
+    "cdp",
+    "social-media"
+  ],
+  "license": "MIT",
+  "engines": {
+    "dsh": ">=0.2.0-rc.1",
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "engines": {
+      "dsh": ">=0.2.0-rc.1"
+    }
+  },
+  "scripts": {
+    "test": "node test/e2e.mjs"
+  }
+}

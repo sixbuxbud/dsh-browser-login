@@ -1,0 +1,11 @@
+# dsh-browser-login bundle patch
+# 把「浏览器（登录态）」这一行插进 profile 的插件树。
+# 行名 dsh-browser-login 从 profile 自己的 node_modules 解析，
+# 因此本包必须被 profile 依赖（pnpm add / link: / 手动 junction 均可）。
+- insert:
+    - id: browser-login
+      name: dsh-browser-login
+      config:
+        # 首次调用工具时才会真正拉起浏览器，这里是默认行为
+        headless: false
+        defaultProfile: default
